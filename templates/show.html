@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class='article'>
+        <h1><a href="/articles/{{article['id']}}">{{ article['headline'] }}</a></h1>
+        <img class="image" src="{{ article['image_url'] }}" alt="{{ article['headline'] }}" />
+        <div class='article-meta'>
+            <p class="date">{{ article['date'] }}</p>
+            <a class="source" href="{{article['article_url']}}"> • {{ article['source'] }}</a>
+        </div>
+        <div class='content'>
+            <p>{{ article['description'] }}</p>
+            <p>{{ article['content'] }}</p>
+        </div>
+    </div>
+{% endblock %}

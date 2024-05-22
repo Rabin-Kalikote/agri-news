@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <div class='articles'>
+    {% for article in news_articles %}
+      <div class='article'>
+        <div class="content-image row">
+          <div class='content col-sm-12 col-md-8'>
+            <h2><a href="/articles/{{article['id']}}">{{ article['headline'] }}</a></h2>
+            <p>{{ article['description'] }}</p>
+          </div>
+          <img class="col-sm-12 col-md-4" src="{{ article['image_url'] }}" alt="{{ article['headline'] }}">
+        </div>
+        <div class='article-meta'>
+          <p class="date">{{ article['date'] }}</p>
+          <a class="source" href="{{article['article_url']}}"> • {{ article['source'] }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
